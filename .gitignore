@@ -26,3 +26,6 @@ Thumbs.db
 
 # license check result
 license-list
+/target/
+/target/
+/.idea/

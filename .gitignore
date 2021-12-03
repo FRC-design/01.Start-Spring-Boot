@@ -1,7 +1,6 @@
 # maven ignore
 target/
 
-/src/test
 
 # idea ignore
 .idea/

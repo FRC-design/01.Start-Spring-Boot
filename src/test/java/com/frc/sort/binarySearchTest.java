@@ -1,5 +1,6 @@
-package com.frc;
+package com.frc.sort;
 
+import com.frc.sort.binarySearch;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

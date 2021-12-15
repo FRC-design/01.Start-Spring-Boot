@@ -1,16 +1,24 @@
 package com.frc.threadlearn;
 
+/**
+ * @author frc
+*     死锁：两个线程持有锁，互相抢对方的锁
+*     1.互斥，共享资源 X 和 Y 只能被一个线程占用；
+*     2.占有且等待，线程 T1 已经取得共享资源 X，在等待共享资源 Y 的时候，不释放共享资源 X；
+*     3.不可抢占，其他线程不能强行抢占线程 T1 占有的资源；
+*     4.循环等待，线程 T1 等待线程 T2 占有的资源，线程 T2 等待线程 T1 占有的资源，就是循环等待。
+ */
 public class DeadLock {
     public static final Object LOCK1 = new Object();
     public static final Object LOCK2 = new Object();
 
     public static void main(String args[]) {
-        ThreadDemo1 T1 = new ThreadDemo1();
-        ThreadDemo2 T2 = new ThreadDemo2();
-        T1.start();
-        T2.start();
+        new ThreadDemo1().start();
+        new ThreadDemo2().start();
+
     }
     private static class ThreadDemo1 extends Thread {
+        @Override
         public void run() {
             synchronized (LOCK1) {
                 System.out.println("Thread 1: Holding lock 1...");
@@ -27,6 +35,7 @@ public class DeadLock {
         }
     }
     private static class ThreadDemo2 extends Thread {
+        @Override
         public void run() {
             synchronized (LOCK2) {
                 System.out.println("Thread 2: Holding lock 2...");

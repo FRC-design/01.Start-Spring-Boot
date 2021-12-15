@@ -8,10 +8,10 @@ public class quickSort {
      快速排序每一次都定位一个元素，
      然后用partition去递归地，对这个pivot左右两部分进行排序，让左边小，右边大；
      */
-    public  void sort(int num[]){
+    public  void sort(int[] num){
         quicksort(num, 0, num.length-1);
     }
-    private  void quicksort(int num[], int left, int right) {
+    private  void quicksort(int[] num, int left, int right) {
         if (left <right) {
             int index = partition(num, left, right);
             quicksort(num, left, index-1);
@@ -29,10 +29,12 @@ public class quickSort {
         }
         int pivot = num[left + (right - left) / 2];
         while(left<=right){
-            while (num[left] < pivot)
+            while (num[left] < pivot) {
                 left++;
-            while (num[right] > pivot)
+            }
+            while (num[right] > pivot) {
                 right--;
+            }
             if (left<=right) {
                 swap(num, left, right);
                 left++;

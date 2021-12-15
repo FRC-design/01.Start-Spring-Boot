@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class testAccount {
+public class TestAccount {
     static private final List<Account> accountList = new ArrayList<>();
     static final int testAccountNumber = 100;
     static final int testThreadNumber = 1000;

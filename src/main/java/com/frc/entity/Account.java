@@ -1,6 +1,6 @@
 package com.frc.entity;
 
-import com.frc.threadlearn.Allocator;
+import com.frc.multithread.Allocator;
 
 /**
  * @author frc
@@ -29,7 +29,7 @@ public class Account {
         return "账号id " + id.toString() + "  余额 ￥" + balance.toString() + " ";
     }
 
-    //转账
+
     public void transactionToTarget(Integer money, Account target) {
         //获取锁
         Allocator.getInstance().getLock(this, target);

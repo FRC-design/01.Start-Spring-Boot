@@ -2,6 +2,8 @@ package com.frc.sort;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.stream.IntStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class quickSortTest {
@@ -13,6 +15,11 @@ class quickSortTest {
         quickSort sortInstance = new quickSort();
         sortInstance.sort(actual);
         assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void instream(){
+        IntStream.range(0, 10000).forEach(System.out::println);
     }
 
 }

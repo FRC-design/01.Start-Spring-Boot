@@ -15,4 +15,12 @@ class mergeSortTest {
         sort.sortArray(actual);
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void selectsort() {
+        int[] actual = { 5, 1, 6, 2, 3, 4 };
+        int[] expected = { 1, 2, 3, 4, 5, 6 };
+        selectSort sort = new selectSort();
+        assertArrayEquals(sort.sort(actual), expected);
+    }
 }

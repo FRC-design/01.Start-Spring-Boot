@@ -5,8 +5,9 @@ public class quickSort {
     /**
      时间复杂度：O(N \log N)O(NlogN)，这里 NN 是数组的长度；
      空间复杂度：O(\log N)O(logN)，这里占用的空间主要来自递归函数的栈空间。
-     快速排序每一次都定位一个元素，
-     然后用partition去递归地，对这个pivot左右两部分进行排序，让左边小，右边大；
+     挑一个pivot，遍历数组，比pivot小的放前面，大的放后面；
+     这个操作结束后，这个pivot左边比他小，右边比他大，这个partition就完成了；
+     再递归地对子数组进行相同的操作；
      */
     public void sort(int[] num){
         quicksort(num, 0, num.length-1);

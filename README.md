@@ -4,9 +4,9 @@ This is a learning material for myself.
 // 微信抢红包
 
 
-private static final float MIN_COUNT = 0.01f;
+   private static final float MIN_COUNT = 0.01f;
  
-public List<Float> func(float total, int k) {
+   public List<Float> func(float total, int k) {
     List<Float> res = new ArrayList<>(k);
     if (total <= 0 || k <= 0 || k * MIN_COUNT > total){
       return res;
